@@ -38,14 +38,10 @@ xmlhttp.send();
 <form>
 <select onchange="showRSS(this.value)">
 <option value="">Select an RSS-feed:</option>
-<option value="Orchestra">Orchestra</option>
-<option value="Intercom">Intercom</option>
-<option value="Vigill">Vigill</option>
-<option value="Exordo">Ex Ordo</option>
-<option value="Lokofoto">Lokofoto</option>
-<option value="Allmoto">Allmoto</option>
-<option value="OnePageCRM">OnePageCRM</option>
 <option value="TeamworkPM">TeamworkPM</option>
+<option value="OnePageCRM">OnePageCRM</option>
+<option value="Allmoto">Allmoto</option>
+<option value="Intercom">Intercom</option>
 </select>
 </form>
     
