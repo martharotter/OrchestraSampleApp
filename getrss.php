@@ -3,39 +3,22 @@
 $q=$_GET["q"];
 
 //find out which feed was selected
-if($q=="Orchestra")
+if($q=="TeamworkPM")
   {
-  $xml=("http://blog.orchestra.io/rss");
-  }
-elseif($q=="Intercom")
-  {
-  $xml=("http://feeds.feedburner.com/contrast/blog?format=xml");
-  }
-elseif($q=="Vigill")
-  {
-  $xml=("http://vigill.tumblr.com/rss");
-  }
-elseif($q=="Lokofoto")
-  {
-  $xml=("http://blog.lokofoto.com/rss");
-  }
-elseif($q=="Exordo")
-  {
-  $xml=("http://blog.exordo.com/feed/");
-  }
-elseif($q=="Allmoto")
-  {
-  $xml=("http://www.allmoto-online.com/site/blog/feed/rss/");
+  $xml=("http://engineroom.teamworkpm.net/rss.xml");
   }
 elseif($q=="OnePageCRM")
   {
   $xml=("http://www.onepagecrm.com/happy-selling-blog/feed/rss/");
   }
-elseif($q=="TeamworkPM")
+elseif($q=="Allmoto")
   {
-  $xml=("http://engineroom.teamworkpm.net/rss.xml");
+  $xml=("http://www.allmoto-online.com/site/blog/feed/rss/");
   }
-  
+elseif($q=="Intercom")
+  {
+  $xml=("http://feeds.feedburner.com/contrast/blog?format=xml");
+  }
 
 $xmlDoc = new DOMDocument();
 $xmlDoc->load($xml);
@@ -44,8 +27,8 @@ $xmlDoc->load($xml);
 $channel=$xmlDoc->getElementsByTagName('channel')->item(0);
 $channel_title = $channel->getElementsByTagName('title')
 ->item(0)->childNodes->item(0)->nodeValue;
-// $channel_link = $channel->getElementsByTagName('link')
-//  ->item(0)->childNodes->item(0)->nodeValue;
+$channel_link = $channel->getElementsByTagName('link')
+ ->item(0)->childNodes->item(0)->nodeValue;
 $channel_desc = $channel->getElementsByTagName('description')
 ->item(0)->childNodes->item(0)->nodeValue;
 
